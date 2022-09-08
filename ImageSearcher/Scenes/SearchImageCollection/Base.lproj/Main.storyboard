@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n0P-2a-6eE">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pixbay Search-->
+        <scene sceneID="bmf-8z-GBa">
+            <objects>
+                <viewController id="sp6-eI-fNn" customClass="ImageSearchViewController" customModule="ImageSearcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HmI-r2-exA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="rV1-tz-ZIG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pjn-M6-JIg">
+                                <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oh7-XR-B1C">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No result, please search for images." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRi-5l-7BL">
+                                <rect key="frame" x="20" y="437.5" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Q7L-TE-5uR"/>
+                        <color key="backgroundColor" red="0.0" green="0.043137254901960784" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kRi-5l-7BL" firstAttribute="centerY" secondItem="HmI-r2-exA" secondAttribute="centerY" id="0KR-Io-BIA"/>
+                            <constraint firstItem="Q7L-TE-5uR" firstAttribute="trailing" secondItem="kRi-5l-7BL" secondAttribute="trailing" constant="20" id="15L-RJ-2VR"/>
+                            <constraint firstItem="pjn-M6-JIg" firstAttribute="top" secondItem="rV1-tz-ZIG" secondAttribute="bottom" id="6IF-IX-uZ4"/>
+                            <constraint firstItem="Q7L-TE-5uR" firstAttribute="bottom" secondItem="pjn-M6-JIg" secondAttribute="bottom" id="6wF-8e-KoF"/>
+                            <constraint firstItem="kRi-5l-7BL" firstAttribute="leading" secondItem="Q7L-TE-5uR" secondAttribute="leading" constant="20" id="98Z-zX-xv7"/>
+                            <constraint firstItem="rV1-tz-ZIG" firstAttribute="leading" secondItem="Q7L-TE-5uR" secondAttribute="leading" id="E6g-K1-gWk"/>
+                            <constraint firstItem="pjn-M6-JIg" firstAttribute="leading" secondItem="Q7L-TE-5uR" secondAttribute="leading" id="SLj-Ue-kPf"/>
+                            <constraint firstItem="Q7L-TE-5uR" firstAttribute="trailing" secondItem="pjn-M6-JIg" secondAttribute="trailing" id="TYb-Zz-rx3"/>
+                            <constraint firstItem="rV1-tz-ZIG" firstAttribute="trailing" secondItem="Q7L-TE-5uR" secondAttribute="trailing" id="how-Ac-2CS"/>
+                            <constraint firstItem="rV1-tz-ZIG" firstAttribute="top" secondItem="Q7L-TE-5uR" secondAttribute="top" id="jvD-JV-xb5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pixbay Search" id="Fll-Ot-WV3"/>
+                    <connections>
+                        <outlet property="collectionView" destination="pjn-M6-JIg" id="ghu-jo-07I"/>
+                        <outlet property="noResultLabel" destination="kRi-5l-7BL" id="a8b-cJ-Vbf"/>
+                        <outlet property="searchBar" destination="rV1-tz-ZIG" id="QKp-8q-0T5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3SD-3t-Ipr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="397.10144927536237" y="101.78571428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TlM-Xt-D6L">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n0P-2a-6eE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="3iF-Lf-L6W">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="TintColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="TintColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sp6-eI-fNn" kind="relationship" relationship="rootViewController" id="uU6-kP-DAV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Uc-gq-He2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-513.04347826086962" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="TintColor"/>
+    <resources>
+        <namedColor name="TintColor">
+            <color red="1" green="0.5607843137254902" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

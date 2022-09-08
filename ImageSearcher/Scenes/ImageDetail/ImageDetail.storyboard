@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Image Detail View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="ImageDetailViewController" customModule="ImageSearcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdD-vQ-ob1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="bAb-Tl-0M3"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUO-zK-oJx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ctu-aG-sAK">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="adA-9M-NSh" appends="YES" id="Ekw-XN-bel"/>
+                                            <outletCollection property="gestureRecognizers" destination="Osc-JO-ypT" appends="YES" id="Mf5-Av-PSS"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ctu-aG-sAK" firstAttribute="trailing" secondItem="UUO-zK-oJx" secondAttribute="trailing" id="3e2-HM-Q41"/>
+                                    <constraint firstItem="Ctu-aG-sAK" firstAttribute="leading" secondItem="UUO-zK-oJx" secondAttribute="leading" id="DBI-aQ-1HX"/>
+                                    <constraint firstItem="Ctu-aG-sAK" firstAttribute="width" secondItem="UUO-zK-oJx" secondAttribute="width" id="EDv-0Y-s3j"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ctu-aG-sAK" secondAttribute="bottom" id="OoB-yg-mhc"/>
+                                    <constraint firstItem="Ctu-aG-sAK" firstAttribute="height" secondItem="UUO-zK-oJx" secondAttribute="height" id="P3B-Cu-jBR"/>
+                                    <constraint firstItem="Ctu-aG-sAK" firstAttribute="top" secondItem="UUO-zK-oJx" secondAttribute="top" id="eW7-rc-Cg9"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="kyi-hL-wJR"/>
+                                </connections>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gw8-Me-PvS">
+                                <rect key="frame" x="0.0" y="821" width="414" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-KE-KMR">
+                                        <rect key="frame" x="20" y="10" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="8lX-nA-PNj"/>
+                                <color key="backgroundColor" name="LightBlue"/>
+                                <constraints>
+                                    <constraint firstItem="ZYh-KE-KMR" firstAttribute="top" secondItem="Gw8-Me-PvS" secondAttribute="top" constant="10" id="0ob-jh-azz"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZYh-KE-KMR" secondAttribute="trailing" constant="20" id="2vB-2J-hzx"/>
+                                    <constraint firstItem="8lX-nA-PNj" firstAttribute="bottom" secondItem="ZYh-KE-KMR" secondAttribute="bottom" constant="10" id="IVY-O0-RPa"/>
+                                    <constraint firstItem="ZYh-KE-KMR" firstAttribute="leading" secondItem="Gw8-Me-PvS" secondAttribute="leading" constant="20" id="RYK-Cv-5GG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gw8-Me-PvS" secondAttribute="trailing" id="9jR-4d-4GL"/>
+                            <constraint firstItem="UUO-zK-oJx" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="AzP-N5-bJh"/>
+                            <constraint firstItem="UUO-zK-oJx" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="ER5-LN-Yht"/>
+                            <constraint firstAttribute="trailing" secondItem="UUO-zK-oJx" secondAttribute="trailing" id="Fsf-QI-Ofm"/>
+                            <constraint firstItem="FdD-vQ-ob1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="LRS-J8-hlc"/>
+                            <constraint firstItem="FdD-vQ-ob1" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="On2-Of-c1g"/>
+                            <constraint firstItem="Gw8-Me-PvS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="SYx-QQ-ElL"/>
+                            <constraint firstAttribute="bottom" secondItem="Gw8-Me-PvS" secondAttribute="bottom" id="TLd-Jy-Zbx"/>
+                            <constraint firstAttribute="bottom" secondItem="UUO-zK-oJx" secondAttribute="bottom" id="VUh-c1-Hwi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FdD-vQ-ob1" secondAttribute="trailing" id="hyx-tm-VCC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="ZYh-KE-KMR" id="9DZ-W9-kxy"/>
+                        <outlet property="descriptionView" destination="Gw8-Me-PvS" id="weX-F5-ZJs"/>
+                        <outlet property="doubleTapGestureRecognizer" destination="Osc-JO-ypT" id="jO4-aU-RVa"/>
+                        <outlet property="imageView" destination="Ctu-aG-sAK" id="M3h-W9-wO9"/>
+                        <outlet property="scrollView" destination="UUO-zK-oJx" id="8qu-Kg-jWa"/>
+                        <outlet property="singleTapGestureRecognizer" destination="adA-9M-NSh" id="XiJ-4b-Ly0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="adA-9M-NSh">
+                    <connections>
+                        <action selector="didTapGesture:" destination="Y6W-OH-hqX" id="hIl-jP-yJi"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="Osc-JO-ypT">
+                    <connections>
+                        <action selector="dobleTapGesture:" destination="Y6W-OH-hqX" id="cB3-bN-lSX"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="132" y="90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="LightBlue">
+            <color red="0.36862745098039218" green="0.3843137254901961" blue="0.46274509803921571" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="0.0" green="0.043137254901960784" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
